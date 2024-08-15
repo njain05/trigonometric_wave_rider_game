@@ -7,24 +7,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="instructionModal" class="modal">
+        <div class="modal-content">
+            <h2>Welcome to Trigonometric Wave Rider</h2>
+            <p>Your goal is to guide the character along the wave while avoiding obstacles. The wave's amplitude, frequency, and phase shift will change every 10 seconds, making the game more challenging as you progress.</p>
+            <p>Use the left and right arrow keys to move the character along the wave. Survive as long as possible to increase your score!</p>
+            <button id="closeModal">Start Game</button>
+        </div>
+    </div>
+
     <div class="game-container">
         <h1>Trigonometric Wave Rider</h1>
-        <p>Level: <span id="level">1</span></p>
+        <label for="themeSelector">Choose Theme: </label>
+        <select id="themeSelector">
+            <option value="default">Default</option>
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+            <option value="retro">Retro</option>
+        </select>
         <p>Score: <span id="score">0</span></p>
+        <p>High Score: <span id="highScore">0</span></p>
         <canvas id="waveCanvas"></canvas>
-        <div id="controls">
-            <label for="amplitude">Amplitude: </label>
-            <input type="range" id="amplitude" min="10" max="100" value="50">
-            <span id="amplitudeValue">50</span>
-            <br>
-            <label for="frequency">Frequency: </label>
-            <input type="range" id="frequency" min="0.1" max="2" value="1" step="0.1">
-            <span id="frequencyValue">1.0</span>
-            <br>
-            <label for="phaseShift">Phase Shift: </label>
-            <input type="range" id="phaseShift" min="0" max="2" value="0" step="0.1">
-            <span id="phaseShiftValue">0.0</span>
-        </div>
         <button id="startButton">Start Game</button>
     </div>
     <script src="script.js"></script>
